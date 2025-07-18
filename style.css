@@ -1,0 +1,126 @@
+/* Objective: Learn how to apply styling with CSS. */
+/* Actions: Add colors, fonts, spacing, and layout adjustments to the webpage. */
+
+body {
+    font-family: 'Arial', sans-serif; /* Change font */
+    background-color: #f4f7f6; /* Light background color */
+    color: #333; /* Default text color */
+    margin: 20px; /* Margin around the whole body */
+    padding: 0;
+    line-height: 1.6; /* Line spacing */
+}
+
+h1 {
+    color: #007bff; /* Blue heading color */
+    text-align: center; /* Center align heading */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff; /* Bottom border for heading */
+}
+
+h2 {
+    color: #28a745; /* Green heading color */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3, h4 {
+    color: #6c757d; /* Grey heading color */
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px; /* Spacing below paragraphs */
+    padding: 5px 0; /* Vertical padding for paragraphs */
+}
+
+.intro-paragraph {
+    background-color: #e2f0f4; /* Light blue background for specific paragraph */
+    border-left: 5px solid #007bff; /* Left border for emphasis */
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: square; /* Square bullet points for list */
+    margin-left: 20px; /* Indent list */
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+li {
+    margin-bottom: 5px; /* Spacing between list items */
+    color: #555;
+}
+
+img {
+    display: block; /* Makes the image a block element */
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto; /* Maintains aspect ratio */
+    margin: 20px auto; /* Centers the image horizontally and adds vertical spacing */
+    border: 3px solid #ffc107; /* Yellow border for image */
+    border-radius: 8px; /* Slightly rounded corners for image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+a {
+    color: #17a2b8; /* Cyan link color */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #138496; /* Darker cyan on hover */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+.interactive-section {
+    text-align: center; /* Center align content in this section */
+    margin: 40px 0;
+    padding: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#alertButton {
+    background-color: #007bff; /* Blue button */
+    color: white; /* White text on button */
+    padding: 12px 25px; /* Button spacing */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+#alertButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#feedbackMessage {
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9em;
+}
