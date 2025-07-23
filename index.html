@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Interactive Webpage</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My First Interactive Webpage!</h1>
 
-    <p>This paragraph introduces the page. Here, you'll see how we can combine <strong>HTML</strong> for content, <em>CSS</em> for styling, and <mark>JavaScript</mark> for interactivity.</p>
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" id="name" required />
+    <input type="email" placeholder="Your Email" id="email" required />
+    <button type="submit">Submit</button>
+  </form>
 
-    <p class="intro-paragraph">Web development is an exciting field, and learning the basics is the first step. We're going to build this page step-by-step.</p>
-
-    <h2>What You'll Find Here:</h2>
-    <ul>
-        <li>Structured content using HTML</li>
-        <li>Beautiful styling with CSS</li>
-        <li>Dynamic interactions with JavaScript</li>
-    </ul>
-
-    <h3>An Example Image:</h3>
-    <img src="https://via.placeholder.com/400x250?text=Web+Development" alt="A placeholder image representing web development.">
-
-    <h4>Useful Links:</h4>
-    <p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Learn more about HTML (MDN)</a> |
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Learn more about CSS (MDN)</a> |
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Learn more about JavaScript (MDN)</a>
-    </p>
-
-    <hr> <div class="interactive-section">
-        <h2>Let's Interact!</h2>
-        <button id="alertButton">Click Me for a Message!</button>
-        <p id="feedbackMessage">The message will appear here.</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 My Web Development Journey. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="validation.js"></script>
 </body>
 </html>
