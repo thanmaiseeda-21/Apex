@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Fun Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>🚀 Welcome to Your Interactive Playground</h1>
+
+  <!-- Quiz Section -->
+  <div id="quiz">
+    <h2 id="question">Loading question...</h2>
+    <div id="options"></div>
+    <button onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- Joke Section -->
+  <div id="joke-box">
+    <h2>😂 Random Joke Generator</h2>
+    <p id="joke">Loading joke...</p>
+    <button onclick="getJoke()">Get Another Joke</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
