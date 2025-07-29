@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Welcome!</h2>
+    <p>This is the homepage of my personal portfolio website.</p>
+  </main>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List</title>
+</head>
+<body>
+  <h2>My To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Add a task"/>
+  <button onclick="addTask()">Add</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskList = document.getElementById("taskList");
+    const taskInput = document.getElementById("taskInput");
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+      taskList.innerHTML = "";
+      tasks.forEach((task, i) => {
+        const li = document.createElement("li");
+        li.innerText = task;
+        li.onclick = () => deleteTask(i);
+        taskList.appendChild(li);
+      });
+    }
+
+    function addTask() {
+      const task = taskInput.value;
+      if (task) {
+        const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        taskInput.value = "";
+        loadTasks();
+      }
+    }
+
+    function deleteTask(index) {
+      let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+      tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      loadTasks();
+    }
+
+    loadTasks();
+  </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Product Listing</title>
+</head>
+<body>
+  <h2>Products</h2>
+  <select id="filterCategory">
+    <option value="">All</option>
+    <option value="electronics">Electronics</option>
+    <option value="books">Books</option>
+  </select>
+
+  <select id="sortOption">
+    <option value="price">Sort by Price</option>
+    <option value="rating">Sort by Rating</option>
+  </select>
+
+  <div id="productList"></div>
+
+  <script>
+    const products = [
+      { name: "Phone", category: "electronics", price: 300, rating: 4.2 },
+      { name: "Laptop", category: "electronics", price: 900, rating: 4.7 },
+      { name: "Book", category: "books", price: 20, rating: 4.0 },
+    ];
+
+    const productList = document.getElementById("productList");
+    const filterCategory = document.getElementById("filterCategory");
+    const sortOption = document.getElementById("sortOption");
+
+    function displayProducts() {
+      let filtered = [...products];
+      const category = filterCategory.value;
+      const sortBy = sortOption.value;
+
+      if (category) {
+        filtered = filtered.filter(p => p.category === category);
+      }
+
+      if (sortBy === "price") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortBy === "rating") {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      productList.innerHTML = filtered.map(p =>
+        `<div><b>${p.name}</b> - ₹${p.price} - ⭐${p.rating}</div>`).join("");
+    }
+
+    filterCategory.onchange = displayProducts;
+    sortOption.onchange = displayProducts;
+
+    displayProducts();
+  </script>
+</body>
+</html>
